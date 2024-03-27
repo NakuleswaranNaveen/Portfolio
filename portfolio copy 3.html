@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="prenom">
+            <div class="n1"></div>
+            <div class="n2"></div>
+            <div class="n3"></div>
+            <div class="aveen">aveen</div>
+    </div>
+    
+    <div class="blanc" style="height: calc(100%);width: calc(100%);position: absolute;top: 0%;z-index: 1111111111111;"></div>
+
+    <div class="popup">
+        <div class="nav">
+            <div class="navclick navclick0"><div class="material-symbols-outlined">home</div><div class="navtxt">Acceuil</div></div>
+            <div class="navclick navclick1"><div class="material-symbols-outlined">person</div><div class="navtxt">A propos de moi</div></div>
+            <div class="navclick navclick2"><div class="material-symbols-outlined">school</div><div class="navtxt">Formation</div></div>
+            <div class="navclick navclick3"><div class="material-symbols-outlined">apartment</div><div class="navtxt">Entreprise</div></div>
+            <div class="navclick navclick4"><div class="material-symbols-outlined">grid_view</div><div class="navtxt">Projet</div></div>
+            <div class="navclick navclick5"><div class="material-symbols-outlined">rss_feed</div><div class="navtxt">Veille technologique</div></div>
+        </div>
+
+        <i class="fa-solid fa-chevron-up"></i>
+        <i class="fa-solid fa-chevron-down"></i>
+
+        <div class="menu" style="visibility: hidden;"></div>
+
+        <div class="menu">
+            <div class="me2nutext">À propos de moi</div>
+            <div class="me3nucontent" style="display: flex;flex-direction: column;justify-content: center;">
+                <div class="txth1">Informations personnelles</div>
+                <br>
+                <div class="txttitlecontent"><span class="txttitle">Prenom:</span> <span class="txt">Naveen</span> <span class="txttitle">Nom:</span> <span class="txt">Nakuleswaran</span></div>
+                <br>
+                <div class="txttitlecontent"><span class="fa-regular fa-envelope txttitle"></span> <span class="txt">nakuleswaran.naveen@gmail.com</span> <span class="fa-solid fa-phone txttitle" style="text-decoration: none;"></span> <span class="txt">06 52 08 92 31</span></div>
+                <br>
+                <div class="txth1">Formation</div>
+                <br>
+                <div class="txttitlecontent">
+                    <span class="txt">BTS Services informatiques aux organisations option slam 2e année,<br> CFA Ingetis, Paris, 2023/2024</span>
+                </div>
+                <br>
+                <div class="txttitlecontent">
+                    <div class="txttitle">Unowhy</div>
+                    <br>
+                    <img src="logouno.png" height="100">
+                    <br>
+                    <div class="txt">Testeur QA</div>
+                    <br>
+                    <div class="txt">Stage 6 semaine, 2023</div>
+                    <br>
+                    <div class="txt">Alternance, 2023-2024</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="me3nucontent" style="color: #fff;display: flex;flex-direction: column;justify-content: center;font-size: 30pt;">Projet</div>
+            <div class="me3nucontent" style="display: flex;flex-direction: column;justify-content: center;">
+                <div style="display: flex;justify-content: space-around;">
+                    <div><img src="logo.png" height="100"><div class="txt">HomeFitHome</div></div>
+                    <div><img src="dvd.png" height="100"><div class="txt">Gestion de location DVD </div></div>
+                </div>
+            </div>
+
+            <div class="me3nucontent" style="display: flex;flex-direction: column;justify-content: center;">
+                <div style="display: flex;justify-content: space-around;">
+                    <div><img src="cypress.jpeg" height="100"><div class="txt">Cypress</div></div>
+                    <div><img src="commande.png" height="100"><div class="txt">Commande</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu">
+            <div class="me2nutext">Veille technologique</div>
+            <div class="me3nucontent" style="display: flex;flex-direction: column;justify-content: center;">
+                <div class="txth1">Qu'est-ce que la veille technologique ?</div>
+                <div class="txttitlecontent">
+                    <div class="txt">
+                        <br>
+                        La veille technologique, élément de la veille stratégique, 
+                        consiste à surveiller les évolutions techniques, 
+                        les innovations dans un secteur d’activité donnée. 
+                        La veille technologique comprend notamment la surveillance, 
+                        la collecte, 
+                        le partage et la diffusion d’information permettant d’anticiper 
+                        ou de s’informer sur des changements en matière de recherche, 
+                        développement, brevet, lancement de nouveaux produits, matériaux, 
+                        processus, concepts, innovation de fabrication, etc…. 
+                        Cela a pour but d’évaluer l’impact sur l’environnement et l’organisation.
+                    </div>
+                </div>
+                
+                <div class="txth1"><br>Google Alert</div>
+                <div class="txttitlecontent">
+                    <br>
+                    <div class="txt"><img src="google-alerte.png" height="100"></div>
+                </div>
+
+                <div class="txth1"><br>Sujet de ma veille</div>
+                <div class="txttitlecontent">
+                    <br>
+                    <div class="txt">Intelligence Artificielle</div>
+                </div>
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<style>
+    * {
+        box-sizing: border-box;
+        font-weight: bold;
+        font-family: Arial;
+    }
+    html,body {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        background: url(back.jpg) no-repeat center;
+        background-size: cover;
+        justify-content: center;
+        scroll-behavior: smooth;
+    }
+    ::-webkit-scrollbar,::-webkit-scrollbar-track,::-webkit-scrollbar-thumb ,::-webkit-scrollbar-thumb:hover {border-radius: 10px;width: 5px;}
+    ::-webkit-scrollbar {width: 5px;}
+    ::-webkit-scrollbar-thumb {background: #1a73e9;}
+    .prenom {
+        height: 300px;
+        width: 100% !important;
+        position: absolute;
+        top: calc(50%);left: calc(50%);
+        transform: translate(-50%,-50%);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        animation: prenom 1s 3.1s forwards;
+    }
+    @keyframes prenom {
+        0% {
+            width: 200px;
+            top: calc(50%);left: calc(50%);
+            transform: translate(-50%,-50%);
+        }
+        100% {
+            width: 500px;
+            top: calc(50%);left: calc(50%);
+            transform: translate(-50%,-50%);
+        }
+    }
+    .nbars {
+        display: flex;
+        justify-content: center;
+    }
+    .n1 {
+        background-color: white;
+        animation: n1 1s 1s forwards;
+        height: 300px;
+        width: 50px;
+        margin-right: 100px;
+        margin-top: 600px;
+    }
+    .n3 {
+        background-color: white;
+        animation: n1 0.5s 3s forwards;
+        height: 300px;
+        width: 50px;
+        margin-top: 600px;
+    }
+    @keyframes n1 {
+        0% {
+            margin-top: 600px;
+        }
+        100% {
+            margin-top: 0px;
+        }
+    }
+    .n2 {
+        background-color: white;
+        transform-origin: right top;
+        transform: skew(26.58deg) translateX(-75px);
+        animation: n2 1s 2s forwards, n22 1s 3.1s forwards;
+        position: absolute;
+    }
+    @keyframes n2 {
+        0% {
+            height: 0px;
+            width: 50px;
+        }
+        100% {
+            height: 300px;
+            width: 50px;
+        }
+    }
+    @keyframes n22 {
+        0% {
+            height: 300px;
+            width: 50px;
+            transform: skew(26.58deg) translateX(-75px);
+        }
+        100% {
+            height: 300px;
+            width: 50px;
+            transform: skew(26.58deg) translateX(-225px);
+        }
+    }
+    .aveen {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        animation: aveen 1s 3.1s forwards;
+        width: 0px;
+        overflow: hidden;
+        transform: translateY(20px);
+    }
+    @keyframes aveen {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 300px;
+        }
+    }
+    
+    .txttitle {
+        color: #6d071a;
+        font-size: 20pt;
+        text-decoration: underline;
+    }
+    .txt {
+        font-size: 20pt;
+        color: black;
+        text-shadow: 0px 0px 5px white;
+    }
+    .txth1 {
+        font-size: 25pt;
+        color: #1a73e9;
+        text-shadow: 0px 0px 5px black;
+    }
+    .menu {
+        text-align: center;
+        font-size: 16pt;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.284);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        transition: all 1s ease-in-out;
+        height: calc(100% - 12px);
+        width: calc(100% - 12px);
+        overflow: auto;
+        margin: 6px;
+
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .me2nutext {
+        overflow: hidden;
+        font-size: 30pt;
+    }
+    .me3nucontent {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+        color: black;
+        overflow: auto;
+    }
+    .popup {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow-x:auto;
+        overflow-y:hidden;
+        opacity: 0;
+        animation: opacity 1s 4s forwards !important;
+    }
+    .fa-chevron-down, .fa-chevron-up {
+        position: absolute;
+        left: 10px;
+        color: white;
+        font-size: 32pt;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.121);
+        padding: 10px;
+        border-radius: 100px;
+        display: none;
+    }
+    .fa-chevron-down {
+        bottom: 10px;
+    }
+    .fa-chevron-up {
+        top: 10px;
+    }
+    /*.txttitlecontent {}*/
+    .nav {
+        position: fixed;
+        top: 50%;
+        left: 0%;
+        transform: translate(0%, -50%);
+        z-index: 1000000;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+    .material-symbols-outlined {
+        padding: 10px;
+        font-size: 25pt;
+    }
+    .navtxt {
+        font-size: 25pt;
+        width: 0px;
+        overflow: hidden;
+        padding: 0px;
+        white-space: nowrap;
+        transition: all 300ms ease-in-out;
+    }
+    .navclick {
+        display: flex;
+    }
+    .navtxtactive {
+        font-size: 25pt;
+        width: 100%;
+        padding: 10px;
+        transition: all 300ms ease-in-out;
+    }
+</style>
+<script>
+    setTimeout(() => {
+        $('.blanc').remove()
+        window.scrollfun = function (e) {
+            if(e.which == 90){
+                //up
+                click = click - 1;
+                if (click <= 0) {
+                    click = 0
+                }
+                //$('.navclick').removeProperty("color");
+                //$('.navclick'+click).css('color', 'white')
+                document.getElementsByClassName('menu')[click].scrollIntoView({ behavior: 'smooth',block: "center"});
+            }
+            if(e.which == 83){
+                //down
+                click++;
+                if (click > clickmax) {
+                    click = clickmax
+                }
+                //$('.navclick').removeProperty("color");
+                $('.navclick'+click).css('color', 'white')
+                document.getElementsByClassName('menu')[click].scrollIntoView({ behavior: 'smooth',block: "center"});
+            }
+        }
+    }, 4);
+    let click = 0;
+    let clickmax  = 3;
+    document.addEventListener('keyup',function(e){
+        scrollfun(e)
+    });
+    $(document).on('mouseover', '.nav', function (e) {
+        $('.navtxt').addClass('navtxtactive');
+    })
+    $(document).on('mouseout', '.nav', function (e) {
+        $('.navtxt').removeClass('navtxtactive');
+    })
+    $(document).on('click', '.navclick', function (e) {
+        console.log($(e.target).attr('class'));
+    })
+    //fait moi une Veille Technologique pour mon portfolio sur les l’intelligence artificielle generative
+</script>
