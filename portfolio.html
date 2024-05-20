@@ -15,7 +15,7 @@
     </div>
     
     <div class="blanc" style="height: calc(100%);width: calc(100%);position: absolute;top: 0%;z-index: 1111111111111;"></div>
-
+    
     <div class="popup">
         <div class="nav">
             <div class="navclick navclick0" style="color: white;"><div class="material-symbols-outlined">home</div><div class="navtxt">Acceuil</div></div>
@@ -24,6 +24,11 @@
             <div class="navclick navclick3"><div class="material-symbols-outlined">apartment</div><div class="navtxt">Entreprise</div></div>
             <div class="navclick navclick4"><div class="material-symbols-outlined">grid_view</div><div class="navtxt">Projet</div></div>
             <div class="navclick navclick5"><div class="material-symbols-outlined">rss_feed</div><div class="navtxt">Veille technologique</div></div>
+        </div>
+
+        <div class="cv-popup">
+            <div class="material-symbols-outlined btn-cv btn-cv2">arrow_back</div>
+            <img src="img/cv.png" class="cv-img">
         </div>
 
         <div class="menu" style="visibility: hidden;"></div>
@@ -36,6 +41,8 @@
                 <div class="txttitlecontent"><span class="txttitle">Nom:</span> <span class="txt">Nakuleswaran</span></div>
                 
                 <div class="txttitlecontent"><span class="txttitle">Prenom:</span> <span class="txt">Naveen</span></div>
+
+                <div class="txttitlecontent"><span class="txt btn-cv btn-cv1">Mon CV</span></div>
                 
                 <div class="txth1">Formation actuel</div>
                 
@@ -437,6 +444,35 @@
         padding: 10px;
         transition: all 300ms ease-in-out;
     }
+    .btn-cv1 {
+        border: 5px solid #1a73e9;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        color: #1a73e9;
+    }
+    .btn-cv2 {
+        position: fixed;
+        color: #fff;
+    }
+    .cv-popup {
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        z-index: 1000001;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        transition: all 300ms ease-in-out;
+        transform: translate(0%,0%) scale(0);
+    }
+    .cv-active {
+        transition: all 300ms ease-in-out;
+        transform: translate(0%,0%) scale(1);
+    }
+    .cv-img {
+        width: 100%;
+    }
 </style>
 <script>
     setTimeout(() => {
@@ -492,6 +528,9 @@
         if ($(e.target).attr('class').includes("navclick")) {
             scrollfun($(e.target).attr('class'))
         }
+    })
+    $(document).on('click', '.btn-cv', function (e) {
+        $('.cv-popup').toggleClass('cv-active')
     })
     //fait moi une Veille Technologique pour mon portfolio sur les l’intelligence artificielle generative
 </script>
