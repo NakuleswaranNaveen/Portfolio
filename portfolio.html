@@ -31,6 +31,11 @@
             <img src="img/cv.png" class="cv-img">
         </div>
 
+        <div class="ts-popup">
+            <div class="material-symbols-outlined btn-ts btn-ts2">arrow_back</div>
+            <img src="img/ts.png" class="ts-img">
+        </div>
+
         <div class="menu" style="visibility: hidden;"></div>
 
         <div class="menu">
@@ -155,6 +160,8 @@
                 <div style="display: flex;justify-content: space-around;">
                     <div><img src="img/commande.png" height="100"><div class="txt">Commande</div></div>
                 </div>
+                
+                <div class="txttitlecontent"><span class="txt btn-ts btn-cv1">Tableau de synthèse</span></div>
             </div>
         </div>
         
@@ -455,7 +462,11 @@
         position: fixed;
         color: #fff;
     }
-    .cv-popup {
+    .btn-ts2 {
+        position: fixed;
+        color: #000;
+    }
+    .cv-popup, .ts-popup {
         position: fixed;
         top: 0%;
         left: 0%;
@@ -470,7 +481,7 @@
         transition: all 300ms ease-in-out;
         transform: translate(0%,0%) scale(1);
     }
-    .cv-img {
+    .cv-img, .ts-img {
         width: 100%;
     }
 </style>
@@ -531,6 +542,9 @@
     })
     $(document).on('click', '.btn-cv', function (e) {
         $('.cv-popup').toggleClass('cv-active')
+    })
+    $(document).on('click', '.btn-ts', function (e) {
+        $('.ts-popup').toggleClass('cv-active')
     })
     //fait moi une Veille Technologique pour mon portfolio sur les l’intelligence artificielle generative
 </script>
