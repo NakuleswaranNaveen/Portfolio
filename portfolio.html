@@ -125,7 +125,6 @@
                     <img src="img/pc.jpeg" height="100">
                     <img src="img/tab.png" height="100">
                     <img src="img/sqoolsuite.jpeg" height="100">
-                    <img src="img/sqoolclasse.png" height="100">
                 </div>
                 
                 <div class="txth1">Outils</div>
@@ -154,6 +153,7 @@
                 
                 <div style="display: flex;justify-content: space-around;">
                     <div><img src="img/cypress.jpeg" height="100"><div class="txt">Cypress</div></div>
+                    <div><img src="img/sqoolclasse.png" height="100"><div class="txt">SQOOL Classe</div></div>
                 </div>
                 
                 <div class="txth1">Projet en personnelle</div>
@@ -518,7 +518,7 @@
             }
         }
         alert('Utiliser la touche z pour le slide precedant et la touche s pour le slide suivant ou les boutton dans le menu a gauche')
-    }, 5000);
+    }, 5500);
     let click = 0;
     let clickmax  = 5;
     document.addEventListener('keyup',function(e){
@@ -549,7 +549,7 @@
     })
 
     $.ajax({ 
-        type: 'GET', 
+        type: 'GET',
         url: 'a.xml',
         success: function (data) {
             console.log(data.getElementsByTagName("entry"))
