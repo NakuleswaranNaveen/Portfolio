@@ -552,11 +552,18 @@
         type: 'GET',
         url: 'a.xml',
         success: function (data) {
-            console.log(data.getElementsByTagName("entry"))
+            console.log($(data.getElementsByTagName("entry")[0]).find('link').attr('href'))
             for (let i = 0; i < data.getElementsByTagName("entry").length; i++) {
-                $('#result').append("<li class='txt' style='border: 3px solid #1a73e9;margin-bottom: 10px;padding: 10px;list-style-type: none;border-radius: 10px;'><a>"+$(data.getElementsByTagName("entry")[i]).find('title').text()+"</a></li>")
+                $('#result').append(`
+                    <li class='txt' style='border: 3px solid #1a73e9;margin-bottom: 10px;padding: 10px;list-style-type: none;border-radius: 10px;' onclick="window.open('${$(data.getElementsByTagName("entry")[i]).find('link').attr('href')}')">
+                        <ul>
+                            <li style='list-style-type: none;'>${$(data.getElementsByTagName("entry")[i]).find('content').text()}</li>
+                            <li style='list-style-type: none;'>publié le ${$(data.getElementsByTagName("entry")[i]).find('published').text()}</li>
+                            <li style='list-style-type: none;'>mis à jour le${$(data.getElementsByTagName("entry")[i]).find('updated').text()}</li>
+                        </ul>
+                    </li>`
+                )
             }
         }
     });
-    //fait moi une Veille Technologique pour mon portfolio sur les l’intelligence artificielle generative
 </script>
